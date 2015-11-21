@@ -40,6 +40,8 @@ namespace OpenFileDialog_WPF
         private void btn_dlg_UN_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dlg1 = new OpenFileDialog(); //se crea una instancia de dialogo
+            dlg1.Title = "Seleccion un elemento";       //Aplica un titulo al dialogo
+            dlg1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);//un destino defaul 
             int el_filtro = filtro1.SelectedIndex;      //se obtiene el index del filtro a aplicar
 
             if (el_filtro != 0) //si se aplico algun filtro
@@ -55,6 +57,9 @@ namespace OpenFileDialog_WPF
         {
             OpenFileDialog dlg2 = new OpenFileDialog(); //se crea una instancia de dialogo
             dlg2.Multiselect = true;                    //se aplica opcion de multiselecion de archivos
+            dlg2.Title = "Seleccione multiples elementos";//Aplica un titulo al dialogo
+            dlg2.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);//un destino defaul
+
             int el_filtro = filtro2.SelectedIndex;      //se obtiene el index del filtro a aplicar
 
             if (el_filtro != 0)     //si se aplico algun filtro
